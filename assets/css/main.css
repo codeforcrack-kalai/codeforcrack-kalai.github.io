@@ -1,0 +1,1790 @@
+/************ CSS Styles ************
+
+    Template Name: Jasmin - Personal Portfolio Template
+    Author: kholie-b
+    version: 1.0
+    Copyright: 2019
+
+************************************/
+
+/*==================================
+
+        Table of Content
+
+        1. Default Settings
+        2. Preloader
+        3. Navbar
+        4. Home Section
+        5. About Section
+        6. Experience Section
+        7. Services Section
+        8. Skills Section
+        9. Statistics Section
+        10. Work Section
+        11. Testimonials Section
+        12. Blog Section
+        13. Contact Section
+        14. Footer
+      
+==================================*/
+
+/*----------------------------------------------------------------
+					1. Start Default Settings
+----------------------------------------------------------------*/
+/*============ Body and Core Css ============*/
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	text-decoration: none !important;
+	list-style: none !important;
+	outline: none !important;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+button:focus {
+	text-decoration: none;
+	border: none;
+	outline: 0;
+	color: #FFF;
+}
+
+ul ol,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Raleway", sans-serif;
+	position: relative;
+	font-size: 16px;
+	line-height: 1.65;
+	color: #b9b9b9;
+	overflow-x: hidden !important
+}
+
+span {
+	display: inline-block;
+}
+
+/*===========Margin And Paddings============*/
+.mt-0 {
+	margin-top: 0 !important;
+}
+
+.mt-5 {
+	margin-top: 5px !important;
+}
+
+.mt-10 {
+	margin-top: 10px !important;
+}
+
+.mt-15 {
+	margin-top: 15px !important;
+}
+
+.mt-20 {
+	margin-top: 20px !important;
+}
+
+.mt-25 {
+	margin-top: 25px !important;
+}
+
+.mt-30 {
+	margin-top: 30px !important;
+}
+
+.mt-35 {
+	margin-top: 35px !important;
+}
+
+.mt-40 {
+	margin-top: 40px !important;
+}
+
+.mt-45 {
+	margin-top: 45px !important;
+}
+
+.mt-50 {
+	margin-top: 50px !important;
+}
+
+.mt-55 {
+	margin-top: 55px !important;
+}
+
+.mt-60 {
+	margin-top: 60px !important;
+}
+
+.mt-62 {
+	margin-top: 62px !important;
+}
+
+.mt-65 {
+	margin-top: 65px !important;
+}
+
+.mt-70 {
+	margin-top: 70px !important;
+}
+
+.mt-75 {
+	margin-top: 75px !important;
+}
+
+.mt-80 {
+	margin-top: 80px !important;
+}
+
+.mt-85 {
+	margin-top: 85px !important;
+}
+
+.mt-90 {
+	margin-top: 90px !important;
+}
+
+.mt-95 {
+	margin-top: 95px !important;
+}
+
+.mt-100 {
+	margin-top: 100px !important;
+}
+
+/* Custom Margin Bottom */
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+
+.mb-5 {
+	margin-bottom: 5px !important;
+}
+
+.mb-10 {
+	margin-bottom: 10px !important;
+}
+
+.mb-15 {
+	margin-bottom: 15px !important;
+}
+
+.mb-20 {
+	margin-bottom: 20px !important;
+}
+
+.mb-25 {
+	margin-bottom: 25px !important;
+}
+
+.mb-30 {
+	margin-bottom: 30px !important;
+}
+
+.mb-35 {
+	margin-bottom: 35px !important;
+}
+
+.mb-40 {
+	margin-bottom: 40px !important;
+}
+
+.mb-45 {
+	margin-bottom: 45px !important;
+}
+
+.mb-50 {
+	margin-bottom: 50px !important;
+}
+
+.mb-55 {
+	margin-bottom: 55px !important;
+}
+
+.mb-60 {
+	margin-bottom: 60px !important;
+}
+
+.mb-62 {
+	margin-bottom: 62px !important;
+}
+
+.mb-65 {
+	margin-bottom: 65px !important;
+}
+
+.mb-70 {
+	margin-bottom: 70px !important;
+}
+
+.mb-75 {
+	margin-bottom: 75px !important;
+}
+
+.mb-80 {
+	margin-bottom: 80px !important;
+}
+
+.mb-85 {
+	margin-bottom: 85px !important;
+}
+
+.mb-90 {
+	margin-bottom: 90px !important;
+}
+
+.mb-95 {
+	margin-bottom: 95px !important;
+}
+
+.mb-100 {
+	margin-bottom: 100px !important;
+}
+
+.m-0 {
+	margin: 0px !important;
+}
+
+/* Custom Padding top */
+.pt-0 {
+	padding-top: 0 !important;
+}
+
+.pt-5 {
+	padding-top: 5px !important;
+}
+
+.pt-10 {
+	padding-top: 10px !important;
+}
+
+.pt-15 {
+	padding-top: 15px !important;
+}
+
+.pt-20 {
+	padding-top: 20px !important;
+}
+
+.pt-25 {
+	padding-top: 25px !important;
+}
+
+.pt-30 {
+	padding-top: 30px !important;
+}
+
+.pt-35 {
+	padding-top: 35px !important;
+}
+
+.pt-40 {
+	padding-top: 40px !important;
+}
+
+.pt-45 {
+	padding-top: 45px !important;
+}
+
+.pt-50 {
+	padding-top: 50px !important;
+}
+
+.pt-55 {
+	padding-top: 55px !important;
+}
+
+.pt-60 {
+	padding-top: 60px !important;
+}
+
+.pt-65 {
+	padding-top: 65px !important;
+}
+
+.pt-70 {
+	padding-top: 70px !important;
+}
+
+.pt-75 {
+	padding-top: 75px !important;
+}
+
+.pt-80 {
+	padding-top: 80px !important;
+}
+
+.pt-85 {
+	padding-top: 85px !important;
+}
+
+.pt-90 {
+	padding-top: 90px !important;
+}
+
+.pt-95 {
+	padding-top: 95px !important;
+}
+
+.pt-100 {
+	padding-top: 100px !important;
+}
+
+.pt-110 {
+	padding-top: 110px !important;
+}
+
+.pt-120 {
+	padding-top: 120px !important;
+}
+
+/* Custom Padding Bottom */
+.pb-0 {
+	padding-bottom: 0 !important;
+}
+
+.pb-1 {
+	padding-bottom: 1px !important;
+}
+
+.pb-5 {
+	padding-bottom: 5px !important;
+}
+
+.pb-10 {
+	padding-bottom: 10px !important;
+}
+
+.pb-15 {
+	padding-bottom: 15px !important;
+}
+
+.pb-20 {
+	padding-bottom: 20px !important;
+}
+
+.pb-25 {
+	padding-bottom: 25px !important;
+}
+
+.pb-30 {
+	padding-bottom: 30px !important;
+}
+
+.pb-35 {
+	padding-bottom: 35px !important;
+}
+
+.pb-40 {
+	padding-bottom: 40px !important;
+}
+
+.pb-45 {
+	padding-bottom: 45px !important;
+}
+
+.pb-50 {
+	padding-bottom: 50px !important;
+}
+
+.pb-55 {
+	padding-bottom: 55px !important;
+}
+
+.pb-60 {
+	padding-bottom: 60px !important;
+}
+
+.pb-65 {
+	padding-bottom: 65px !important;
+}
+
+.pb-70 {
+	padding-bottom: 70px !important;
+}
+
+.pb-75 {
+	padding-bottom: 75px !important;
+}
+
+.pb-80 {
+	padding-bottom: 80px !important;
+}
+
+.pb-85 {
+	padding-bottom: 85px !important;
+}
+
+.pb-90 {
+	padding-bottom: 90px !important;
+}
+
+.pb-95 {
+	padding-bottom: 95px !important;
+}
+
+.pb-100 {
+	padding-bottom: 100px !important;
+}
+
+.pb-120 {
+	padding-bottom: 120px !important;
+}
+
+/*Custom Padding right*/
+.pr-0 {
+	padding-right: 0 !important;
+}
+
+/*===========Typography Settings============*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #fff;
+	margin: 0;
+	padding: 0;
+	line-height: 1.2;
+	font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+	font-size: 55px;
+	font-weight: 700;
+}
+
+h2 {
+
+	font-size: 40px;
+	font-weight: 500;
+}
+
+h3 {
+	font-weight: 500;
+	font-size: 23px;
+}
+
+h4 {
+
+	font-size: 21px;
+	font-weight: 500;
+}
+
+h5 {
+	font-size: 20px;
+	font-weight: 500;
+}
+
+p {
+	line-height: 28px;
+	font-weight: 500;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	color: #E1E8E1;
+}
+
+/*===========Buttons============*/
+.btn-sm {
+	padding: 0
+}
+
+.btn-sm a {
+	display: inline-block;
+	border: 2px solid #FFEB69;
+	padding-right: 10px;
+	padding-left: 10px;
+	color: #FFEB69;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	border-radius: 2px;
+	transition: all .5s;
+	height: 45px;
+	min-width: 170px;
+	text-align: center;
+	line-height: 45px
+}
+
+.btn-sm a:hover {
+	background: #FFEB69;
+	color: #000
+}
+
+/*===========Sections Titles============*/
+.title-section {
+	margin-bottom: 80px;
+	display: table;
+	position: relative;
+	left: 50%;
+	top: 20%;
+	transform: translate(-50%, -50%)
+}
+
+/*Title section h2*/
+.title-section h2 {
+	text-align: center;
+	display: table-cell;
+}
+
+.title-section h2:before {
+	content: '';
+	position: absolute;
+	height: 6px;
+	width: 60px;
+	background: #FFEB69;
+	top: 100%;
+	left: 0
+}
+
+.title-section h2:after {
+	content: '';
+	position: absolute;
+	height: 6px;
+	width: 6px;
+	background: #FFEB69;
+	top: 100%;
+	left: 69px
+}
+
+.title-section h2 span {
+	color: #FFEB69;
+	font-weight: 300
+}
+
+.infos-title h3 {
+	position: relative;
+	color: #fff;
+	margin-bottom: 25px;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+.infos-title h3:before {
+	content: '';
+	position: absolute;
+	height: 4px;
+	width: 60px;
+	background: #FFEB69;
+	top: 120%;
+	left: 0
+}
+
+.infos-title h3:after {
+	content: '';
+	position: absolute;
+	height: 4px;
+	width: 4px;
+	background: #FFEB69;
+	top: 120%;
+	left: 65px
+}
+
+/*===========Owl Carousel Settings============*/
+.owl-theme .owl-nav.disabled + .owl-dots {
+	margin-top: 15px;
+	line-height: .7;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+	background: rgba(255, 235, 105, .1);
+	width: 8px;
+	height: 8px;
+	margin: 0 7px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+	background: #FFEB69;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+	width: 20px;
+	height: 8px
+}
+
+/*===========Logo============*/
+.logo {
+	font-size: 20px;
+	font-weight: 800;
+	letter-spacing: 1px;
+	color: #fff !important;
+	padding: 15px 0;
+}
+
+.logo span {
+	color: #FFEB69;
+	font-size: 40px;
+	line-height: 15px;
+	display: inline
+}
+
+/*----------------------------------------------------------------
+					End Default Settings
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+					2. Start Preloader
+----------------------------------------------------------------*/
+.preloader {
+	background-color: #181718;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	overflow: hidden;
+	top: 0;
+	left: 0;
+	z-index: 1000000000;
+	opacity: 1;
+}
+
+.loading-overlay {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+}
+
+.loading-inner {
+	height: 60px;
+	width: 60px;
+	padding: 0px;
+	display: inline-block;
+}
+
+.loading-inner span {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	display: inline-block;
+	border-radius: 100%;
+	background-color: #FFEB69;
+	-webkit-animation: preloading 1.6s linear infinite;
+	animation: preloading 1.6s linear infinite;
+}
+
+.loading-inner span:last-child {
+	animation-delay: -0.6s;
+	-webkit-animation-delay: -0.6s;
+}
+
+@keyframes preloading {
+	0% {
+		transform: scale(0, 0);
+		opacity: 0.5;
+	}
+
+	100% {
+		transform: scale(1, 1);
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes preloading {
+	0% {
+		-webkit-transform: scale(0, 0);
+		opacity: 0.5;
+	}
+
+	100% {
+		-webkit-transform: scale(1, 1);
+		opacity: 0;
+	}
+}
+
+/*----------------------------------------------------------------
+					End Preloader
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+					3. Start Navigation
+----------------------------------------------------------------*/
+.navbar {
+	transition: .5s ease;
+}
+
+.bg-dark {
+	background: #1B1C1E !important
+}
+
+
+.navbar-toggler {
+	background: transparent;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border: none
+}
+
+.navbar-toggler-icon {
+	height: 3px;
+	display: block;
+	background: #181718
+}
+
+.navbar .navbar-nav .active {
+	color: #FFEB69 !important
+}
+
+.navbar .navbar-nav .nav-link {
+	margin: 0 5px;
+	color: #fff;
+	letter-spacing: .5px;
+	transition: all .5s;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 12px
+}
+
+.navbar .navbar-nav .nav-link:hover {
+	color: #FFEB69;
+	cursor: pointer
+}
+
+.navigation-scroll {
+	background: #1B1C1E;
+	position: fixed;
+	padding: 7px 0;
+	border-bottom: 1px solid #181718
+}
+
+.navbar-toggler-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.navbar-dark .navbar-toggler {
+	background-color: transparent;
+	border: none;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.navbar-toggler-icon {
+	background-image: none !important;
+	height: 3px;
+	margin-bottom: 3px;
+	display: block;
+	background: #fff;
+}
+
+.nav-fixed .navbar-toggler-icon {
+	background: #444 !important;
+}
+
+/*----------------------------------------------------------------
+					End Navigation
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+					4. Start Home Section
+----------------------------------------------------------------*/
+.home {
+	height: 100vh;
+	min-height: 100%;
+	width: 100%;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, .0)), url(../img/Header-bg.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	z-index: 999;
+}
+
+.home .overlay {
+	background-image: url(../img/pattern.png);
+	background-repeat: repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100%;
+	height: 100vh;
+	opacity: .2;
+	z-index: -1
+}
+
+.home .banner {
+	display: table;
+}
+
+.home .banner-inner {
+	display: table-cell;
+	vertical-align: middle;
+	height: 100vh;
+	min-height: 100%;
+}
+
+.home h1 {
+	color: #fff;
+	margin: 0 0 30px 0;
+	text-transform: capitalize;
+	text-align: left;
+	font-size: 50px;
+	font-weight: 800;
+	line-height: 70px;
+	position: relative;
+	letter-spacing: 3px;
+}
+
+.home h1:before {
+	content: '';
+	position: absolute;
+	width: 60px;
+	height: 6px;
+	background: #FFEB69;
+	right: 6.5%;
+	top: 90%;
+}
+
+.home h1:after {
+	content: '';
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	background: #FFEB69;
+	right: 4.5%;
+	top: 90%;
+}
+
+.home h1 span {
+	color: #ffeb69;
+}
+
+.home h4 {
+	letter-spacing: 2px;
+	color: #FFEB69;
+	display: inline-block;
+	position: relative;
+	text-transform: capitalize;
+	font-size: 15px;
+	font-weight: 700;
+	line-height: 27px;
+	padding: 10px 30px;
+	margin: 0 0 50px;
+	background: rgba(0, 0, 0, .7)
+}
+
+.home .btn-sm {
+	position: relative;
+	z-index: 1000
+}
+
+.home-bg img {
+	position: absolute;
+	left: 0;
+	bottom: -50px;
+	width: 100%
+}
+
+#particles-js {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+/*----------------------------------------------------------------
+					End Home Section
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+					5. Start About Section
+----------------------------------------------------------------*/
+.about {
+	background: #181718;
+	position: relative;
+	padding-bottom: 145px
+}
+
+.about-img {
+	position: relative;
+	margin-right: 50px;
+	margin-left: 30px
+}
+
+.about-img:before {
+	content: '';
+	position: absolute;
+	height: 80%;
+	width: 80%;
+	background: rgba(255, 235, 105, .7);
+	bottom: -30px;
+	right: -30px;
+	z-index: 2
+}
+
+.about-img:after {
+	content: '';
+	position: absolute;
+	z-index: 3;
+	top: -30px;
+	left: -30px;
+	height: 25%;
+	width: 15%;
+	border-left: 2px solid rgba(255, 235, 105, .7);
+	border-top: 2px solid rgba(255, 235, 105, .7);
+}
+
+.about-img img {
+	z-index: 3;
+	position: relative
+}
+
+.about .about-head {
+	letter-spacing: 2px;
+	color: #FFEB69;
+	margin-bottom: 30px
+}
+
+.about p span {
+	color: #FFEB69
+}
+
+.infos-left {
+	position: relative
+}
+
+.infos-inner {
+	padding: 30px;
+	background: #1B1C1E
+}
+
+.infos-inner p {
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+	color: #FFEB69;
+	text-transform: capitalize;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.infos-inner p:last-child {
+	margin-bottom: 0;
+}
+
+.infos-inner p span {
+	color: #ddd;
+	margin-left: 10px;
+	font-weight: 400;
+}
+
+.infos-inner p span a {
+	margin-right: 10px;
+	display: inline-block;
+	transition: all 0.1s;
+}
+
+.infos-inner p span a:hover {
+	color: #FFEB69 !important
+}
+
+.infos-bg {
+	position: absolute;
+	font-size: 50px;
+	top: 15px;
+	right: 30px;
+	color: #ddd;
+	opacity: .2;
+}
+
+.form-bg {
+	position: absolute;
+	left: 0;
+	top: -50px;
+	width: 100%;
+	z-index: 1000;
+	fill: #181718;
+	z-index: 1000;
+	-webkit-transform: rotate(180deg) translateY(100%);
+	transform: rotate(180deg) translateY(100%);
+	top: 1px;
+}
+
+/*----------------------------------------------------------------
+					End About Section
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+					6. Start Experience Section
+----------------------------------------------------------------*/
+.experience {
+	background: #1B1C1E
+}
+
+.main-timeline {
+	overflow: hidden;
+	position: relative;
+	padding-top: 8px
+}
+
+.main-timeline .timeline {
+	width: 50%;
+	float: left;
+	padding: 20px 60px;
+	border-radius: 0 30px 0 0;
+	border-top: 7px solid #181718;
+	border-right: 7px solid #181718;
+	position: relative;
+	right: -3.5px
+}
+
+.main-timeline .timeline-content {
+	display: block;
+	padding: 30px;
+	border-radius: 20px;
+	background: #181718;
+	position: relative
+}
+
+.main-timeline .timeline-content:before,
+.main-timeline .timeline-content:after {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 50px;
+	border-radius: 10px;
+	background: #181718;
+	position: absolute;
+	top: -35px;
+	left: 50px
+}
+
+.main-timeline .timeline-content:after {
+	left: auto;
+	right: 50px
+}
+
+.experience h6 {
+	margin-bottom: 10px;
+	color: #FFEB69
+}
+
+.main-timeline .timeline-content p {
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 500
+}
+
+.main-timeline .timeline:nth-child(2n) {
+	border-right: none;
+	border-left: 7px solid #181718;
+	border-radius: 30px 0 0 0;
+	right: auto;
+	left: -3.5px
+}
+
+.main-timeline .timeline:nth-child(2n) span {
+	left: auto;
+	right: 0
+}
+
+.main-timeline .timeline:nth-child(2) {
+	margin-top: 130px
+}
+
+.main-timeline .timeline:nth-child(odd) {
+	margin: -130px 0 30px 0
+}
+
+.main-timeline .timeline:nth-child(even) {
+	margin-bottom: 80px
+}
+
+.main-timeline .timeline:first-child {
+	margin: 0 0 30px 0
+}
+
+.main-timeline .timeline:last-child {
+	margin-bottom: 0
+}
+
+/*----------------------------------------------------------------
+					End Experience Section
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+					7. Start Services Section
+----------------------------------------------------------------*/
+.services {
+	background: #181718;
+}
+
+.services .features-item {
+	background-color: #1B1C1E;
+	padding: 50px 40px;
+	position: relative;
+	margin-bottom: 30px;
+	-webkit-transition: 0.4s ease-in-out;
+	-moz-transition: 0.4s ease-in-out;
+	-ms-transition: 0.4s ease-in-out;
+	-o-transition: 0.4s ease-in-out;
+	transition: 0.4s ease-in-out;
+}
+
+.services .features-item:hover {
+	-webkit-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	-o-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	position: relative;
+	transform: translate(0, -5px);
+	cursor: pointer
+}
+
+.services .features-icons span {
+	font-size: 40px;
+	color: #FFEB69;
+}
+
+.services .features-item h5 {
+	margin-bottom: 30px;
+	margin-top: 18px;
+	text-transform: capitalize;
+	font-size: 17px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	position: relative
+}
+
+.services .features-item h5:before {
+	content: '';
+	position: absolute;
+	height: 4px;
+	width: 40px;
+	background: #FFEB69;
+	top: 120%;
+	left: 0
+}
+
+.services .features-item h5:after {
+	content: '';
+	position: absolute;
+	height: 4px;
+	width: 4px;
+	background: #FFEB69;
+	top: 120%;
+	left: 45px
+}
+
+.services .features-item p {
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 500
+}
+
+.services .number-bg {
+	position: absolute;
+	font-size: 50px;
+	font-weight: 700;
+	top: 50px;
+	right: 40px;
+	color: #eee;
+	opacity: .1;
+	line-height: 30px
+}
+
+/*----------------------------------------------------------------
+					End Services Section
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+					8. Start Skills Section
+----------------------------------------------------------------*/
+.skills {
+	background: #1B1C1E;
+}
+
+.skills-content {
+	padding: 50px 40px;
+	background: #181718;
+	position: relative;
+	-webkit-transition: 0.4s ease-in-out;
+	-moz-transition: 0.4s ease-in-out;
+	-ms-transition: 0.4s ease-in-out;
+	-o-transition: 0.4s ease-in-out;
+	transition: 0.4s ease-in-out;
+}
+
+.skills-content:hover {
+	-webkit-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	-o-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	position: relative;
+	transform: translate(0, -5px);
+	cursor: pointer
+}
+
+.skills .infos-title h3 {
+	position: relative;
+	color: #fff;
+	margin-bottom: 25px;
+	font-size: 18px;
+	font-weight: 600;
+	letter-spacing: 1px
+}
+
+.skills .infos-title h3:before {
+	content: '';
+	position: absolute;
+	height: 4px;
+	width: 40px;
+	background: #FFEB69;
+	top: 120%;
+	left: 0
+}
+
+.skills .infos-title h3:after {
+	content: '';
+	position: absolute;
+	height: 4px;
+	width: 4px;
+	background: #FFEB69;
+	top: 120%;
+	left: 45px
+}
+
+.skills-content p {
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 500
+}
+
+.skills .number-bg {
+	position: absolute;
+	font-size: 50px;
+	font-weight: 700;
+	top: 50px;
+	right: 40px;
+	color: #eee;
+	opacity: .1;
+	line-height: 30px
+}
+
+.skills .box .chart {
+	width: 130px;
+	height: 130px;
+	margin: 0 auto 8px;
+	text-align: center;
+	font-size: 30px;
+	line-height: 24px;
+	padding: 100px 0 0;
+	color: #eee;
+	font-weight: 800
+}
+
+.skills .box canvas {
+	position: absolute;
+	top: 40px;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+.skills h6 {
+	margin-top: 55px;
+	font-weight: 600
+}
+
+/*----------------------------------------------------------------
+					End Skills Section
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+					9. Start Statistics Section
+----------------------------------------------------------------*/
+.statistics {
+	background-image: url(../img/Statistics.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+	height: 100%;
+	position: relative
+}
+
+.statistics .overlay {
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, .7);
+	position: absolute;
+	top: 0;
+	left: 0
+}
+
+.statistics .counter {
+	font-size: 35px;
+	font-weight: 800;
+	color: #FFEB69;
+	letter-spacing: 2px;
+	line-height: 0.75;
+	margin-bottom: 30px;
+	font-family: 'Open Sans', sans-serif
+}
+
+.statistics h6 {
+	letter-spacing: 1px;
+	margin-top: 30px;
+	margin-left: 30px;
+	margin-bottom: 30px;
+	padding: 15px;
+	background: rgba(255, 235, 105, .1);
+	position: relative;
+}
+
+.statistics h6:before {
+	content: '';
+	position: absolute;
+	height: 6px;
+	width: 40px;
+	background: #FFEB69;
+	top: 50%;
+	left: -30px
+}
+
+.statistics h6:after {
+	content: '';
+	position: absolute;
+	height: 6px;
+	width: 6px;
+	background: #FFEB69;
+	top: 50%;
+	left: 17px
+}
+
+/*----------------------------------------------------------------
+					End Statistics Section
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+				10.	Start Work Section
+----------------------------------------------------------------*/
+.work {
+	background: #1B1C1E;
+}
+
+.list-filter {
+	display: inline-block;
+	margin-bottom: 0;
+	padding-left: 0;
+}
+
+.list-filter li {
+	margin: 0 15px 10px;
+	padding: 0px 0px 3px 0;
+	letter-spacing: 2px;
+	cursor: pointer;
+	position: relative;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 600;
+	display: inherit;
+}
+
+.list-filter li:before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	display: table;
+	height: 1px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 3px;
+	bottom: -4px;
+	left: 0;
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear;
+	-webkit-transform: scaleX(0);
+	-ms-transform: scaleX(0);
+	transform: scaleX(0);
+	background: #FFEB69 !important;
+	opacity: 0;
+}
+
+.list-filter li.active {
+	color: #FFEB69;
+}
+
+.list-control li.active::before {
+	background-color: transparent;
+	opacity: 1;
+	color: #FFEB69 !important;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
+
+.work-inner {
+	margin-bottom: 30px;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+
+.work-inner .work-img {
+	overflow: hidden;
+	position: relative;
+}
+
+.work-inner .work-img img {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	-ms-transform: scale(1.1);
+	-o-transform: scale(1.1);
+	transform: scale(1.1);
+}
+
+.work-inner .overlay {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: 10px;
+	bottom: 10px;
+	padding: 30px;
+	background: rgba(0, 0, 0, .7);
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transform: scale(1.1, 1.1);
+	-moz-transform: scale(1.1, 1.1);
+	transform: scale(1.1, 1.1);
+}
+
+.work-inner:hover .overlay {
+	visibility: visible;
+	opacity: 1;
+}
+
+.work-inner:hover .overlay {
+	opacity: 1;
+	-moz-transform: scale(1, 1);
+	transform: scale(1, 1);
+}
+
+.overlay .icon-work {
+	position: absolute;
+	right: 30px;
+	bottom: 50px;
+	border: 1px solid #1B1C1E;
+	height: 40px;
+	width: 40px;
+	background: #181718;
+	color: #ffeb69;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: center;
+	border-radius: 2px;
+}
+
+.work-title h4 {
+	position: absolute;
+	text-align: left;
+	z-index: 33;
+	bottom: 60px;
+	left: 30px;
+	margin-left: -50px;
+	-webkit-transition: 0.4s ease-in-out;
+	-moz-transition: 0.4s ease-in-out;
+	-ms-transition: 0.4s ease-in-out;
+	-o-transition: 0.4s ease-in-out;
+	transition: 0.4s ease-in-out;
+}
+
+.work-inner:hover .overlay h4 {
+	margin-left: 0px;
+
+}
+
+.work-inner .overlay h4:hover {
+	color: #f3c26b;
+}
+
+/*----------------------------------------------------------------
+					End Work Section
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+					11. Start Testimonials Section
+----------------------------------------------------------------*/
+.testimonials {
+	background: #181718;
+}
+
+.testimonials .box {
+	position: relative;
+	padding: 50px 40px;
+	transition: .5s;
+	text-align: center;
+	background: #1B1C1E;
+}
+
+.testimonials .box .img-box img {
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	display: inline-block;
+	border: 2px solid #444;
+	padding: 3px;
+	background: #1b1c1e
+}
+
+.testimonials .box p {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	color: #E1E8E1;
+	font-size: 14px
+}
+
+
+.testimonials .box p span {
+	color: #E1E8E1
+}
+
+.testimonials .box span {
+	font-weight: 500;
+	font-size: 14px;
+	color: #fff;
+	font-family: 'open sans', sans-serif
+}
+
+.testimonials h5 {
+	color: #FFEB69;
+	font-size: 18px;
+	letter-spacing: 1px;
+	text-transform: capitalize;
+	margin-bottom: 5px
+}
+
+.testimonial-icon {
+	position: absolute;
+	color: #181718;
+	top: 80%;
+	left: 0
+}
+
+/*----------------------------------------------------------------
+					End Testimonials Section
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+					12. Start Blog Section
+----------------------------------------------------------------*/
+.blog {
+	background: #1B1C1E;
+}
+
+.blog .blog-content {
+	padding: 30px;
+	background: #181718;
+	color: #FFF;
+	font-weight: 800;
+}
+
+.blog .blog-content .date {
+	margin-bottom: 10px
+}
+
+.blog-pic {
+	overflow: hidden;
+}
+
+.blog-pic img {
+	transition: all .7s;
+}
+
+.blog-pic img:hover {
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+.blog .blog-content .name {
+	color: #FFEB69
+}
+
+/*----------------------------------------------------------------
+					End Blog Section
+----------------------------------------------------------------*/
+/*----------------------------------------------------------------
+					13. Start Contact Section
+----------------------------------------------------------------*/
+.contact {
+	background: #181718
+}
+
+.contact .features-item {
+	background-color: #1B1C1E;
+	padding: 40px 30px;
+	position: relative;
+	margin-bottom: 30px;
+	-webkit-transition: 0.4s ease-in-out;
+	-moz-transition: 0.4s ease-in-out;
+	-ms-transition: 0.4s ease-in-out;
+	-o-transition: 0.4s ease-in-out;
+	transition: 0.4s ease-in-out;
+}
+
+.contact .features-item:hover {
+	-webkit-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	-o-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+	position: relative;
+	transform: translate(0, -5px);
+	cursor: pointer
+}
+
+.contact .features-icons span {
+	font-size: 30px;
+	color: #FFEB69;
+	margin-bottom: 10px
+}
+
+.contact .features-item h5 {
+	margin-bottom: 20px;
+	position: relative
+}
+
+.contact .features-item h5:before {
+	content: '';
+	position: absolute;
+	height: 4px;
+	width: 40px;
+	background: #FFEB69;
+	top: 100%;
+	left: 0
+}
+
+.contact .features-item h5:after {
+	content: '';
+	position: absolute;
+	height: 4px;
+	width: 4px;
+	background: #FFEB69;
+	top: 100%;
+	left: 45px
+}
+
+.contact .features-item p {
+	margin-bottom: 0;
+	font-weight: 500
+}
+
+.contact .number-bg {
+	position: absolute;
+	font-size: 50px;
+	font-weight: 700;
+	top: 40px;
+	right: 30px;
+	color: #eee;
+	opacity: .1;
+	line-height: 30px
+}
+
+.contact-form {
+	padding: 30px;
+	background: #1B1C1E;
+}
+
+.contact .contact-form textarea {
+	height: 150px !important
+}
+
+.contact .form-control {
+	background: #181718;
+	padding: 20px;
+	border: none;
+	border-radius: 8px
+}
+
+.contact .form-contro:hover {
+	box-shadow: 5px 5px 8px #000
+}
+
+::placeholder {
+	color: #E1E8E1 !important;
+	font-style: italic
+}
+
+/*Contact Button*/
+.contact .btn-sm {
+	display: inline-block;
+	border: 2px solid #FFEB69;
+	background: transparent;
+	padding-right: 10px;
+	padding-left: 10px;
+	color: #FFEB69;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	border-radius: 2px;
+	transition: all .5s;
+	height: 45px;
+	min-width: 170px;
+	text-align: center;
+	line-height: 45px
+}
+
+.contact .btn-sm:hover {
+	background: #FFEB69;
+	color: #000;
+	cursor: pointer
+}
+
+/*----------------------------------------------------------------
+					End Contact Section
+----------------------------------------------------------------*/
+
+/*----------------------------------------------------------------
+					14. Start Footer Section
+----------------------------------------------------------------*/
+footer {
+	background: #1B1C1E;
+}
+
+.social-media a {
+	margin: 15px;
+	transition: all .5s;
+}
+
+.social-media a:hover {
+	color: #FFEB69
+}
+
+footer p {
+	letter-spacing: 2px;
+	margin-bottom: 0;
+	font-weight: 500
+}
+
+footer p strong {
+	color: #FFEB69
+}
+
+/*----------------------------------------------------------------
+					End Footer Section
+----------------------------------------------------------------*/

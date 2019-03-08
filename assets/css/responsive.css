@@ -1,0 +1,336 @@
+/*Extra Large Devices>=1200px*/
+@media (min-width:1200px) {}
+
+/*Large Devices>=992px and <1200px*/
+@media (min-width:992px) and (max-width:1199px) {
+
+	/*===========About============*/
+	.about {
+		padding-bottom: 120px !important
+	}
+}
+
+/*Medium Devices>=768px and <992px*/
+@media(min-width:768px) and (max-width:991px) {
+
+	/*===========Navigation============*/
+	.navbar .navbar-collapse {
+		text-align: center;
+		background-color: #181718;
+	}
+
+	.navbar .navbar-collapse .nav-item a {
+		display: inline-block;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	.navbar .logo {
+		padding: 15px 12px;
+		transition: all .5s;
+	}
+
+	/*===========About============*/
+	.about {
+		padding-bottom: 120px !important
+	}
+
+	.about-img {
+		margin-right: 30px
+	}
+
+	.about .about-head {
+		margin-top: 60px
+	}
+
+	/*===========Skills============*/
+	.skills .mb-sm-0 {
+		margin-bottom: 0 !important
+	}
+
+	.skills .mt-sm-40 {
+		margin-top: 40px !important
+	}
+}
+
+/*Small Devices>=576px and <768px*/
+@media(min-width:576px) and (max-width:767px) {
+	h2 {
+		font-size: 35px
+	}
+
+	/*===========Navigation============*/
+	.navbar .navbar-collapse {
+		text-align: center;
+		background-color: #181718;
+	}
+
+	.navbar .navbar-collapse .nav-item a {
+		display: inline-block;
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+	.navbar .logo {
+		padding: 15px 12px;
+		transition: all .5s;
+	}
+
+	/*===========Home============*/
+	.home h1 {
+		font-size: 45px;
+		line-height: 65px
+	}
+
+	.home h1:before {
+		left: 0;
+		top: 92%
+	}
+
+	.home h1:after {
+		left: 13%;
+		top: 92%
+	}
+
+	/*===========About============*/
+	.about {
+		padding-bottom: 120px !important
+	}
+
+	.about-img {
+		margin-right: 30px
+	}
+
+	.about .about-head {
+		margin-top: 60px
+	}
+
+	/*===========Experience============*/
+	.main-timeline {
+		padding-top: 0
+	}
+
+	.main-timeline .timeline {
+		width: 100%;
+		padding: 0;
+		border: none;
+		right: 0
+	}
+
+	.experience .timeline-content {
+		-webkit-transition: 0.4s ease-in-out;
+		-moz-transition: 0.4s ease-in-out;
+		-ms-transition: 0.4s ease-in-out;
+		-o-transition: 0.4s ease-in-out;
+		transition: 0.4s ease-in-out;
+		border-radius: 0
+	}
+
+	.experience .timeline-content:hover {
+		-webkit-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+		-o-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+		position: relative;
+		transform: translate(0, -5px);
+		cursor: pointer
+	}
+
+	.main-timeline .timeline-content:before,
+	.main-timeline .timeline-content:after {
+		width: 0;
+		height: 0
+	}
+
+	.main-timeline .timeline:nth-child(2n) {
+		border: none;
+		left: 0
+	}
+
+	.main-timeline .timeline:nth-child(2n) span {
+		left: 0
+	}
+
+	.main-timeline .timeline:nth-child(2) {
+		margin-top: 0
+	}
+
+	.main-timeline .timeline:nth-child(odd) {
+		margin: 0 0 30px 0
+	}
+
+	.main-timeline .timeline:nth-child(even) {
+		margin-bottom: 30px
+	}
+
+	.main-timeline .timeline:first-child {
+		margin: 0 0 30px 0
+	}
+
+	.main-timeline .timeline:last-child {
+		margin-bottom: 0
+	}
+
+	/*===========Skills============*/
+	.skills .mb-sm-0 {
+		margin-bottom: 0 !important
+	}
+
+	.skills .mt-sm-0 {
+		margin-top: 0 !important
+	}
+
+	.skills .mt-sm-40 {
+		margin-top: 40px !important
+	}
+
+}
+
+/*Extra Small Devices<576px*/
+@media(max-width:575px) {
+	h2 {
+		font-size: 26px
+	}
+
+	/*===========Navigation============*/
+	.navbar .navbar-collapse {
+		text-align: center;
+		background-color: #181718;
+	}
+
+	.navbar .navbar-collapse .nav-item a {
+		display: inline-block;
+		margin-top: 3px;
+		margin-bottom: 3px;
+	}
+
+	.navbar .logo {
+		padding: 15px 12px;
+		transition: all .5s;
+	}
+
+	/*===========Home============*/
+	.home h1 {
+		font-size: 35px;
+		line-height: 55px
+	}
+
+	.home h1:before {
+		left: 62%;
+		top: 92%
+	}
+
+	.home h1:after {
+		left: 76%;
+		top: 92%
+	}
+
+	.home h4 {
+		margin-bottom: 30px
+	}
+
+	/*===========About============*/
+	.about {
+		padding-bottom: 120px !important
+	}
+
+	.about-img {
+		margin-right: 30px
+	}
+
+	.about .about-head {
+		margin-top: 60px
+	}
+
+	/*===========Experience============*/
+	.main-timeline {
+		padding-top: 0
+	}
+
+	.main-timeline .timeline {
+		width: 100%;
+		padding: 0;
+		border: none;
+		right: 0
+	}
+
+	.experience .timeline-content {
+		-webkit-transition: 0.4s ease-in-out;
+		-moz-transition: 0.4s ease-in-out;
+		-ms-transition: 0.4s ease-in-out;
+		-o-transition: 0.4s ease-in-out;
+		transition: 0.4s ease-in-out;
+		border-radius: 0
+	}
+
+	.experience .timeline-content:hover {
+		-webkit-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+		-o-box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+		position: relative;
+		transform: translate(0, -5px);
+		cursor: pointer
+	}
+
+	.main-timeline .timeline-content:before,
+	.main-timeline .timeline-content:after {
+		width: 0;
+		height: 0
+	}
+
+	.main-timeline .timeline:nth-child(2n) {
+		border: none;
+		left: 0
+	}
+
+	.main-timeline .timeline:nth-child(2n) span {
+		left: 0
+	}
+
+	.main-timeline .timeline:nth-child(2) {
+		margin-top: 0
+	}
+
+	.main-timeline .timeline:nth-child(odd) {
+		margin: 0 0 30px 0
+	}
+
+	.main-timeline .timeline:nth-child(even) {
+		margin-bottom: 30px
+	}
+
+	.main-timeline .timeline:first-child {
+		margin: 0 0 30px 0
+	}
+
+	.main-timeline .timeline:last-child {
+		margin-bottom: 0
+	}
+
+	/*===========Skills============*/
+	.skills .mb-sm-0 {
+		margin-bottom: 0 !important
+	}
+
+	.skills .mt-sm-0 {
+		margin-top: 0 !important
+	}
+
+	.skills .mt-sm-40 {
+		margin-top: 40px !important
+	}
+}
+
+/*Extra Small Devices<531px*/
+@media(max-width:531px) {
+	.home h1:before {
+		left: 0%;
+		top: 92%
+	}
+
+	.home h1:after {
+		left: 18%;
+		top: 92%
+	}
+}
