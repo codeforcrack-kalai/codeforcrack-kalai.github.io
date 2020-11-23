@@ -1,0 +1,18 @@
+<VirtualHost *:80>
+    ServerAdmin admin@example.com
+    ServerName blog.local
+    ServerAlias www.blog.local
+    DocumentRoot /var/www/blog/public
+ 
+    <Directory /var/www/blog/>
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Order allow,deny
+            allow from all
+            Require all granted
+    </Directory>
+ 
+    LogLevel debug
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
