@@ -4,22 +4,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --bg-primary: #050505;
-  --bg-secondary: #0a0a0a;
+  --bg-primary: #0b1120;
+  --bg-secondary: #0f172a;
   --bg-card: rgba(255, 255, 255, 0.03);
-  --bg-card-hover: rgba(255, 255, 255, 0.06);
+  --bg-card-hover: rgba(255, 255, 255, 0.07);
   
   --border-color: rgba(255, 255, 255, 0.06);
   --border-hover: rgba(255, 255, 255, 0.15);
   
-  --accent-cyan: #00e5ff;
-  --accent-blue: #2979ff;
-  --accent-violet: #d500f9;
-  --accent-pink: #ff1744;
+  --accent-cyan: #facc15; /* Vibrant Yellow */
+  --accent-blue: #14b8a6; /* Teal */
+  --accent-violet: #6366f1; /* Indigo */
+  --accent-pink: #f43f5e;
   
-  --text-primary: #ffffff;
-  --text-secondary: #a1a1aa;
-  --text-muted: #71717a;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
   
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
