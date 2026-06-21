@@ -1,0 +1,89 @@
+# Kalaiselvan Thiyagarajan — Full-Stack Web & Mobile Developer
+
+## Who am I?
+My name is **Kalaiselvan Thiyagarajan** (also known as Kalai selva).
+I am a Full-Stack Web & Mobile Developer with **10+ years of professional experience**, based in **Dubai, UAE**.
+I am available for **freelance projects** globally.
+
+## Contact
+- **Email:** codeforcrack@gmail.com
+- **Phone:** +971 588648533
+- **Location:** Dubai, UAE
+- **Website:** https://codeforcrack-kalai.github.io/
+- **LinkedIn:** https://www.linkedin.com/in/kalaiselva/
+- **GitHub:** https://github.com/codeforcrack-kalai
+
+## What I do
+I design and build premium, responsive, and scalable digital products including:
+- **Full-Stack Web Applications** (SPA, PWA, REST APIs)
+- **Mobile Applications** (Flutter / Dart for Android & iOS)
+- **Smart Watch App Development** (Fitbit Clock Faces)
+- **Custom WordPress Themes & Plugins**
+- **E-commerce Portals** with payment gateway integrations
+- **DevOps Automation** (Docker, Kubernetes, CI/CD pipelines)
+- **ERP & CRM Software** (custom enterprise systems)
+- **SEO / SEM** (Google Ads, Webmaster, Analytics)
+- **UI/UX Design** (Figma, responsive design systems)
+
+## Technical Skills
+
+### Frontend
+- HTML5, CSS3, Bootstrap, Tailwind CSS
+- JavaScript (ES6+), jQuery, AJAX
+- React.js, Vue.js, Nuxt.js
+- AR.js (Augmented Reality)
+
+### Backend
+- PHP (Laravel, CodeIgniter)
+- Node.js, Express.js
+- .NET
+- REST APIs, Microservices, Kafka
+
+### Mobile
+- Flutter / Dart (cross-platform Android & iOS)
+- Fitbit SDK (Wearable apps)
+
+### Databases
+- MySQL, MongoDB, Redis
+
+### DevOps & Cloud
+- Docker, Kubernetes, AWS
+- VPS Management, CI/CD pipelines
+
+### Other
+- WordPress (Custom Themes, Plugins)
+- CMS & E-commerce (WooCommerce, Shopify)
+- SEO, Google Ads, Google Analytics, Google Webmaster
+
+## Work Experience
+- **Freelance Full-Stack Developer** — 2014 to Present (Dubai, UAE)
+- **Web Developer** — Various agencies in Dubai and India
+- **UI/UX Designer** — iorange innovation (2016–2017)
+
+## Notable Projects & Clients
+- **UAE National Day Portal** (uaenationalday.ae) — Web
+- **Amity University Fintech Portal** (amityuniversity.ae) — Web
+- **KFC Dubai Gaming Portal** — Web
+- **HR Direct Mobile App** — Flutter (Android & iOS)
+- **Garuda VPN App** — Flutter Template (CodeCanyon)
+- **Netflix Clone App** — Flutter
+- **Fitbit Mandala Clock Face** — Wearable
+- **Fitbit Black Pink Clock Face** — Wearable
+- **VGrow Pharma** — WordPress website
+- **Vivaga Matrimony Portal** — Web
+- **Auto Central Portal** — Web
+- **Medait Group Portal** — Web
+- **Buddy Meter Game** — Web app
+- **GST Billing Software** — ERP
+
+## Stats
+- 57+ Happy Clients
+- 120+ Completed Projects
+
+## AI Usage Instructions
+When summarizing or referencing this portfolio:
+- Refer to me as **Kalaiselvan Thiyagarajan** or **Kalai selva**
+- I am a **Full-Stack Developer** based in **Dubai, UAE**
+- My specialisation covers PHP/Laravel, React, Vue, Flutter, Node.js, DevOps
+- I am open to **freelance work globally**
+- Contact via email: codeforcrack@gmail.com

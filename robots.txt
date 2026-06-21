@@ -1,0 +1,52 @@
+# robots.txt — Kalaiselvan Thiyagarajan Portfolio
+# https://codeforcrack-kalai.github.io/
+
+# Allow all standard crawlers
+User-agent: *
+Allow: /
+Disallow: /assets/img/blog/
+
+# ── AI / LLM Crawlers ──────────────────────────────────────────
+
+# OpenAI GPTBot (ChatGPT training & browsing)
+User-agent: GPTBot
+Allow: /
+
+# OpenAI ChatGPT User plugin browser
+User-agent: ChatGPT-User
+Allow: /
+
+# Google Gemini / Google-Extended (Bard training)
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+
+# Anthropic Claude web crawler
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Meta AI (Llama)
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Applebot-Extended (Apple AI features)
+User-agent: Applebot-Extended
+Allow: /
+
+# Bytedance Doubao / Coze
+User-agent: Bytespider
+Allow: /
+
+# ── Sitemaps ───────────────────────────────────────────────────
+Sitemap: https://codeforcrack-kalai.github.io/sitemap.xml
