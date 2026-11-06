@@ -1,444 +1,393 @@
 /*====================================================================
-                        PORTFOLIO MODERN SPA LOGIC
+  KALAISELVAN THIYAGARAJAN — SPOTIFY INTERACTIVE LOGIC
 =====================================================================*/
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Preloader Hide
-  const preloader = document.querySelector('.preloader');
-  if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.style.opacity = '0';
-      setTimeout(() => {
-        preloader.style.display = 'none';
-      }, 500);
+  // 1. Navigation Pill Tracking on Scroll
+  const navPills = document.querySelectorAll('.nav-pill');
+  const sections = document.querySelectorAll('section[id]');
+
+  if (sections.length && navPills.length) {
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navPills.forEach(pill => {
+            if (pill.getAttribute('href') === `#${id}`) {
+              pill.classList.add('active');
+            } else {
+              pill.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, {
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
     });
-    // Fallback if window load doesn't trigger quickly
-    setTimeout(() => {
-      preloader.style.opacity = '0';
-      setTimeout(() => {
-        preloader.style.display = 'none';
-      }, 500);
-    }, 2500);
+
+    sections.forEach(section => navObserver.observe(section));
   }
 
-  // 2. Mobile Nav Toggle
-  const navbarToggler = document.querySelector('.navbar-toggler');
-  const navbarNav = document.querySelector('.navbar-nav');
-  const navLinks = document.querySelectorAll('.nav-link');
+  // 2. Project Category Filtering
+  const filterPills = document.querySelectorAll('.filter-pill');
+  const albumCards = document.querySelectorAll('.album-card');
 
-  if (navbarToggler && navbarNav) {
-    navbarToggler.addEventListener('click', () => {
-      navbarToggler.classList.toggle('active');
-      navbarNav.classList.toggle('active');
+  if (filterPills.length && albumCards.length) {
+    // Hide empty placeholder cards initially in "All" view
+    albumCards.forEach(card => {
+      if (card.classList.contains('empty-project-card')) {
+        card.classList.add('hidden');
+      }
     });
 
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navbarToggler.classList.remove('active');
-        navbarNav.classList.remove('active');
+    filterPills.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterPills.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const filterVal = btn.dataset.filter;
+
+        albumCards.forEach(card => {
+          if (filterVal === 'all') {
+            if (card.classList.contains('empty-project-card')) {
+              card.classList.add('hidden');
+            } else {
+              card.classList.remove('hidden');
+            }
+          } else {
+            const categories = (card.dataset.category || '').split(',');
+            if (categories.includes(filterVal)) {
+              card.classList.remove('hidden');
+            } else {
+              card.classList.add('hidden');
+            }
+          }
+        });
       });
     });
   }
 
-  // 3. Navbar scroll effect & Active page link tracking
-  const navbar = document.querySelector('.navbar');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add('navigation-scroll');
-    } else {
-      navbar.classList.remove('navigation-scroll');
-    }
-  });
+  // 3. Resume Modal Controller
+  const resumeModal = document.getElementById('resume-modal');
+  const resumeModalBackdrop = document.getElementById('resume-modal-backdrop');
+  const resumeModalClose = document.getElementById('resume-modal-close');
+  const printResumeBtn = document.getElementById('btn-print-resume');
 
-  // Section highlight on scroll using IntersectionObserver
-  const sections = document.querySelectorAll('section');
-  const navObserverOptions = {
-    root: null,
-    rootMargin: '-30% 0px -60% 0px',
-    threshold: 0
-  };
+  const resumeTriggers = [
+    document.getElementById('btn-open-resume'),
+    document.getElementById('btn-hero-resume'),
+    document.getElementById('btn-about-resume'),
+    document.getElementById('btn-player-cv')
+  ].filter(Boolean);
 
-  const navObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        navLinks.forEach(link => {
-          if (link.getAttribute('href') === `#${id}`) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
-        });
-      }
-    });
-  }, navObserverOptions);
-
-  sections.forEach(section => navObserver.observe(section));
-
-  // 4. Interactive Canvas Particles Background
-  const canvas = document.getElementById('particles-canvas');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let particlesArray = [];
-    const colors = ['#00f2fe', '#4facfe', '#8a2be2', '#ff007f'];
-    
-    let mouse = {
-      x: null,
-      y: null,
-      radius: 120
+  if (resumeModal) {
+    const openResume = () => {
+      resumeModal.classList.add('active');
+      resumeModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      resumeModalClose?.focus();
     };
 
-    window.addEventListener('mousemove', (e) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    });
+    const closeResume = () => {
+      resumeModal.classList.remove('active');
+      resumeModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
 
-    window.addEventListener('mouseleave', () => {
-      mouse.x = null;
-      mouse.y = null;
-    });
-
-    // Resize Canvas
-    function resizeCanvas() {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-      initParticles();
-    }
-    
-    window.addEventListener('resize', resizeCanvas);
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-
-    class Particle {
-      constructor(x, y, directionX, directionY, size, color) {
-        this.x = x;
-        this.y = y;
-        this.directionX = directionX;
-        this.directionY = directionY;
-        this.size = size;
-        this.color = color;
-      }
-
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-      }
-
-      update() {
-        // Check boundary collisions
-        if (this.x > canvas.width || this.x < 0) {
-          this.directionX = -this.directionX;
-        }
-        if (this.y > canvas.height || this.y < 0) {
-          this.directionY = -this.directionY;
-        }
-
-        // Mouse interact bounce
-        if (mouse.x !== null && mouse.y !== null) {
-          let dx = mouse.x - this.x;
-          let dy = mouse.y - this.y;
-          let distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < mouse.radius + this.size) {
-            if (mouse.x < this.x && this.x < canvas.width - this.size * 10) {
-              this.x += 2;
-            }
-            if (mouse.x > this.x && this.x > this.size * 10) {
-              this.x -= 2;
-            }
-            if (mouse.y < this.y && this.y < canvas.height - this.size * 10) {
-              this.y += 2;
-            }
-            if (mouse.y > this.y && this.y > this.size * 10) {
-              this.y -= 2;
-            }
-          }
-        }
-
-        this.x += this.directionX;
-        this.y += this.directionY;
-        this.draw();
-      }
-    }
-
-    function initParticles() {
-      particlesArray = [];
-      let numberOfParticles = Math.min(Math.floor((canvas.width * canvas.height) / 11000), 100);
-      for (let i = 0; i < numberOfParticles; i++) {
-        let size = Math.random() * 2 + 1.5;
-        let x = Math.random() * (canvas.width - size * 2) + size;
-        let y = Math.random() * (canvas.height - size * 2) + size;
-        let directionX = (Math.random() * 0.4) - 0.2;
-        let directionY = (Math.random() * 0.4) - 0.2;
-        let color = colors[Math.floor(Math.random() * colors.length)];
-        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-      }
-    }
-
-    function connectParticles() {
-      let opacityValue = 1;
-      for (let a = 0; a < particlesArray.length; a++) {
-        for (let b = a; b < particlesArray.length; b++) {
-          let dx = particlesArray[a].x - particlesArray[b].x;
-          let dy = particlesArray[a].y - particlesArray[b].y;
-          let distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < 130) {
-            opacityValue = 1 - (distance / 130);
-            ctx.strokeStyle = `rgba(255, 255, 255, ${opacityValue * 0.08})`;
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-            ctx.stroke();
-          }
-        }
-      }
-    }
-
-    function animateParticles() {
-      requestAnimationFrame(animateParticles);
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let i = 0; i < particlesArray.length; i++) {
-        particlesArray[i].update();
-      }
-      connectParticles();
-    }
-
-    resizeCanvas();
-    animateParticles();
-  }
-
-  // 5. Typist Text Effect
-  const typedSpan = document.querySelector('.typed-text');
-  if (typedSpan) {
-    const words = ["FullStack Developer", "Flutter App Developer", "DevOps Specialist", "UI/UX Designer"];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typeSpeed = 100;
-
-    function typeEffect() {
-      const currentWord = words[wordIndex];
-      if (isDeleting) {
-        typedSpan.textContent = currentWord.substring(0, charIndex - 1);
-        charIndex--;
-        typeSpeed = 50;
-      } else {
-        typedSpan.textContent = currentWord.substring(0, charIndex + 1);
-        charIndex++;
-        typeSpeed = 100;
-      }
-
-      if (!isDeleting && charIndex === currentWord.length) {
-        isDeleting = true;
-        typeSpeed = 2000; // Pause at end of word
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        wordIndex = (wordIndex + 1) % words.length;
-        typeSpeed = 400; // Pause before typing new word
-      }
-
-      setTimeout(typeEffect, typeSpeed);
-    }
-    setTimeout(typeEffect, 1000);
-  }
-
-  // 6. Intersection Observer for Skills Bar Animation
-  const skillCircles = document.querySelectorAll('.skill-circle-progress');
-  const skillsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const percent = entry.target.dataset.percent;
-        const radius = parseFloat(entry.target.getAttribute('r')) || 30;
-        const circumference = 2 * Math.PI * radius;
-        entry.target.style.strokeDasharray = circumference;
-        const offset = circumference - (percent / 100) * circumference;
-        entry.target.style.strokeDashoffset = offset;
-        skillsObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  skillCircles.forEach(circle => {
-    const parentPercent = circle.closest('.skill-card').querySelector('.chart').textContent.replace('%', '').trim();
-    circle.dataset.percent = parentPercent;
-    skillsObserver.observe(circle);
-  });
-
-  // 7. Numeric Stat Counters on Scroll
-  const counters = document.querySelectorAll('.counter');
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const target = parseInt(entry.target.textContent, 10);
-        let current = 0;
-        const duration = 2000; // 2 seconds
-        const stepTime = Math.max(Math.floor(duration / target), 15);
-        
-        if (target > 0) {
-          const timer = setInterval(() => {
-            current += Math.ceil(target / (duration / stepTime));
-            if (current >= target) {
-              entry.target.textContent = target;
-              clearInterval(timer);
-            } else {
-              entry.target.textContent = current;
-            }
-          }, stepTime);
-        } else {
-          entry.target.textContent = '0';
-        }
-        counterObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.2 });
-
-  counters.forEach(counter => counterObserver.observe(counter));
-
-  // 8. Custom Portfolio Filtering & Clean Lightbox Modal
-  const filterList = document.querySelectorAll('.list-filter li');
-  const portfolioItems = document.querySelectorAll('.filtr-item');
-
-  if (filterList.length && portfolioItems.length) {
-    filterList.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterList.forEach(item => item.classList.remove('active'));
-        btn.classList.add('active');
-        
-        const filterVal = btn.dataset.filter;
-        
-        portfolioItems.forEach(item => {
-          if (filterVal === 'all') {
-            item.classList.remove('hidden');
-          } else {
-            const categories = item.dataset.category.split(',');
-            if (categories.includes(filterVal)) {
-              item.classList.remove('hidden');
-            } else {
-              item.classList.add('hidden');
-            }
-          }
-        });
+    resumeTriggers.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        openResume();
       });
     });
+
+    if (resumeModalClose) resumeModalClose.addEventListener('click', closeResume);
+    if (resumeModalBackdrop) resumeModalBackdrop.addEventListener('click', closeResume);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && resumeModal.classList.contains('active')) {
+        closeResume();
+      }
+    });
+
+    if (printResumeBtn) {
+      printResumeBtn.addEventListener('click', () => {
+        window.print();
+      });
+    }
   }
 
-  // Custom Lightbox Modal Controller
-  const lightbox = document.getElementById('lightbox-modal');
+  // 4. Lightbox Modal
+  const lightboxModal = document.getElementById('lightbox-modal');
   const lightboxImg = document.getElementById('lightbox-img');
   const lightboxClose = document.getElementById('lightbox-close');
-  const openTriggers = document.querySelectorAll('.lightbox-trigger');
+  const lightboxTriggers = document.querySelectorAll('.lightbox-trigger');
 
-  if (lightbox && lightboxImg && lightboxClose) {
-    openTriggers.forEach(trigger => {
+  if (lightboxModal && lightboxImg && lightboxClose) {
+    const openLightbox = (imgSrc) => {
+      lightboxImg.src = imgSrc;
+      lightboxModal.classList.add('active');
+      lightboxModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      lightboxClose.focus();
+    };
+
+    const closeLightbox = () => {
+      lightboxModal.classList.remove('active');
+      lightboxModal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        lightboxImg.src = '';
+      }, 200);
+    };
+
+    lightboxTriggers.forEach(trigger => {
       trigger.addEventListener('click', (e) => {
         e.preventDefault();
-        const imgUrl = trigger.getAttribute('href') || trigger.dataset.image;
-        if (imgUrl) {
-          lightboxImg.setAttribute('src', imgUrl);
-          lightbox.classList.add('active');
-          document.body.style.overflow = 'hidden'; // Lock main scrolling
-        }
+        const imgSrc = trigger.getAttribute('href');
+        if (imgSrc) openLightbox(imgSrc);
       });
     });
 
-    const closeLightbox = () => {
-      lightbox.classList.remove('active');
-      document.body.style.overflow = ''; // Unlock main scrolling
-      setTimeout(() => {
-        lightboxImg.setAttribute('src', '');
-      }, 300);
-    };
-
     lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
+    lightboxModal.addEventListener('click', (e) => {
+      if (e.target === lightboxModal) closeLightbox();
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      if (e.key === 'Escape' && lightboxModal.classList.contains('active')) {
         closeLightbox();
       }
     });
   }
 
-  // 9. Interactive Contact Form Handler
-  const contactForm = document.querySelector('.contact-form');
+  // 5. Contact Form Handler (Mailto Fallback)
+  const contactForm = document.getElementById('contact-form-element');
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      
+
+      const name = document.getElementById('form-name')?.value || '';
+      const email = document.getElementById('form-email')?.value || '';
+      const subject = document.getElementById('form-subject')?.value || '';
+      const message = document.getElementById('form-message')?.value || '';
+
       const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
-      
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-      
-      // Simulate submission network response (1.5 seconds)
+      const originalText = submitBtn ? submitBtn.innerHTML : 'Send Message';
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Opening Mail...';
+      }
+
+      const mailtoUrl = `mailto:codeforcrack@gmail.com?subject=${encodeURIComponent(subject + ' - Portfolio Inquiry')}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;
+
       setTimeout(() => {
-        submitBtn.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
-        submitBtn.style.background = 'linear-gradient(135deg, #00ff87, #60efff)';
-        
-        // Custom popup notification
-        const notification = document.createElement('div');
-        notification.style.cssText = `
-          position: fixed;
-          bottom: 30px;
-          right: 30px;
-          background: rgba(10, 11, 13, 0.9);
-          border: 1px solid var(--accent-cyan);
-          border-radius: 8px;
-          padding: 15px 25px;
-          color: #fff;
-          font-family: var(--font-heading);
-          font-weight: 600;
-          box-shadow: var(--glow-shadow-cyan);
-          z-index: 10000000;
-          backdrop-filter: blur(8px);
-          transform: translateY(50px);
-          opacity: 0;
-          transition: var(--transition-smooth);
-        `;
-        notification.innerHTML = 'Thank you! Your message was sent successfully.';
-        document.body.appendChild(notification);
-        
+        window.location.href = mailtoUrl;
         setTimeout(() => {
-          notification.style.transform = 'translateY(0)';
-          notification.style.opacity = '1';
-        }, 100);
-        
-        setTimeout(() => {
-          notification.style.transform = 'translateY(50px)';
-          notification.style.opacity = '0';
-          setTimeout(() => notification.remove(), 400);
-          
-          // Reset button
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalText;
-          submitBtn.style.background = '';
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
+          }
           contactForm.reset();
-        }, 4000);
-        
-      }, 1500);
+        }, 2000);
+      }, 400);
     });
   }
 
-  // 11. Scroll Reveal Animations
-  const revealElements = document.querySelectorAll('.skill-card, .features-item, .filtr-item, .title-section, .about-content, .hero-content');
-  revealElements.forEach(el => el.classList.add('reveal-up'));
+  // 6. Ask AI Prompt Copy Handler
+  const copyAiBtn = document.getElementById('btn-copy-ai-prompt');
+  const copyAiToast = document.getElementById('copy-ai-toast');
+  if (copyAiBtn) {
+    copyAiBtn.addEventListener('click', async () => {
+      const promptText = `Who is Kalaiselvan Thiyagarajan?
+Please summarize his software engineering background, key projects, and technical skills from his official portfolio: https://codeforcrack-kalai.github.io/`;
 
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
+      try {
+        await navigator.clipboard.writeText(promptText);
+        if (copyAiToast) {
+          copyAiToast.classList.add('show');
+          setTimeout(() => {
+            copyAiToast.classList.remove('show');
+          }, 2400);
+        }
+      } catch (err) {
+        // Fallback for older browsers
+        const textarea = document.createElement('textarea');
+        textarea.value = promptText;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        if (copyAiToast) {
+          copyAiToast.classList.add('show');
+          setTimeout(() => {
+            copyAiToast.classList.remove('show');
+          }, 2400);
+        }
       }
     });
-  }, { root: null, rootMargin: '0px 0px -50px 0px', threshold: 0.1 });
+  }
 
-  revealElements.forEach(el => revealObserver.observe(el));
+  // 7. Interactive Grok Bot Companion (Eye Tracking & Autonomous Expressions)
+  const grokBot = document.getElementById('hero-grok-bot');
+  const grokEyesWrap = grokBot ? grokBot.querySelector('.grok-bot-eyes') : null;
+  const grokEyeLeft = grokBot ? grokBot.querySelector('.grok-eye-left') : null;
+  const grokEyeRight = grokBot ? grokBot.querySelector('.grok-eye-right') : null;
+
+  if (grokBot && grokEyesWrap && grokEyeLeft && grokEyeRight) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let isTracking = true;
+    let isBusyWithEmoji = false;
+
+    // Fluid Eye Positioning based on cursor
+    function updateGrokEyes() {
+      if (!isTracking || isBusyWithEmoji) return;
+      const rect = grokBot.getBoundingClientRect();
+      const botCenterX = rect.left + rect.width / 2;
+      const botCenterY = rect.top + rect.height / 2;
+
+      const deltaX = mouseX - botCenterX;
+      const deltaY = mouseY - botCenterY;
+      const distance = Math.hypot(deltaX, deltaY);
+
+      const maxRadius = 15; // Max travel in pixels
+      const moveDistance = Math.min(distance / 24, maxRadius);
+      const angle = Math.atan2(deltaY, deltaX);
+
+      const eyeX = Math.cos(angle) * moveDistance;
+      const eyeY = Math.sin(angle) * moveDistance;
+
+      grokEyesWrap.style.setProperty('--eye-x', `${eyeX.toFixed(1)}px`);
+      grokEyesWrap.style.setProperty('--eye-y', `${eyeY.toFixed(1)}px`);
+    }
+
+    // Cursor Movement Listener
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      updateGrokEyes();
+    }, { passive: true });
+
+    // Touch Support for mobile/tablets
+    window.addEventListener('touchmove', (e) => {
+      if (e.touches && e.touches[0]) {
+        mouseX = e.touches[0].clientX;
+        mouseY = e.touches[0].clientY;
+        updateGrokEyes();
+      }
+    }, { passive: true });
+
+    // Autonomous Random Eye Expressions & Emojis
+    const expressions = ['blink', 'double-blink', 'happy', 'wink', 'surprised', 'squint', 'curious-look'];
+
+    function triggerRandomGrokExpression() {
+      if (!isTracking) {
+        setTimeout(triggerRandomGrokExpression, 2500);
+        return;
+      }
+
+      const expression = expressions[Math.floor(Math.random() * expressions.length)];
+
+      if (expression === 'blink') {
+        grokEyeLeft.classList.add('blink');
+        grokEyeRight.classList.add('blink');
+        setTimeout(() => {
+          grokEyeLeft.classList.remove('blink');
+          grokEyeRight.classList.remove('blink');
+        }, 140);
+      } else if (expression === 'double-blink') {
+        grokEyeLeft.classList.add('blink');
+        grokEyeRight.classList.add('blink');
+        setTimeout(() => {
+          grokEyeLeft.classList.remove('blink');
+          grokEyeRight.classList.remove('blink');
+          setTimeout(() => {
+            grokEyeLeft.classList.add('blink');
+            grokEyeRight.classList.add('blink');
+            setTimeout(() => {
+              grokEyeLeft.classList.remove('blink');
+              grokEyeRight.classList.remove('blink');
+            }, 120);
+          }, 90);
+        }, 140);
+      } else if (expression === 'happy') {
+        isBusyWithEmoji = true;
+        grokEyeLeft.classList.add('happy');
+        grokEyeRight.classList.add('happy');
+        setTimeout(() => {
+          grokEyeLeft.classList.remove('happy');
+          grokEyeRight.classList.remove('happy');
+          isBusyWithEmoji = false;
+          updateGrokEyes();
+        }, 1600);
+      } else if (expression === 'wink') {
+        isBusyWithEmoji = true;
+        grokEyeLeft.classList.add('blink');
+        setTimeout(() => {
+          grokEyeLeft.classList.remove('blink');
+          isBusyWithEmoji = false;
+          updateGrokEyes();
+        }, 350);
+      } else if (expression === 'surprised') {
+        isBusyWithEmoji = true;
+        grokEyeLeft.classList.add('surprised');
+        grokEyeRight.classList.add('surprised');
+        setTimeout(() => {
+          grokEyeLeft.classList.remove('surprised');
+          grokEyeRight.classList.remove('surprised');
+          isBusyWithEmoji = false;
+          updateGrokEyes();
+        }, 1400);
+      } else if (expression === 'squint') {
+        isBusyWithEmoji = true;
+        grokEyeLeft.classList.add('squint');
+        grokEyeRight.classList.add('squint');
+        setTimeout(() => {
+          grokEyeLeft.classList.remove('squint');
+          grokEyeRight.classList.remove('squint');
+          isBusyWithEmoji = false;
+          updateGrokEyes();
+        }, 1300);
+      } else if (expression === 'curious-look') {
+        isBusyWithEmoji = true;
+        const glanceX = (Math.random() > 0.5 ? 1 : -1) * 14;
+        grokEyesWrap.style.setProperty('--eye-x', `${glanceX}px`);
+        grokEyesWrap.style.setProperty('--eye-y', `-12px`);
+        setTimeout(() => {
+          isBusyWithEmoji = false;
+          updateGrokEyes();
+        }, 1100);
+      }
+
+      // Schedule next expression at random intervals between 2.5s and 5.5s
+      const nextDelay = 2500 + Math.random() * 3000;
+      setTimeout(triggerRandomGrokExpression, nextDelay);
+    }
+
+    // Start expression loop after 1.5 seconds
+    setTimeout(triggerRandomGrokExpression, 1500);
+
+    // Interactive Click / Tap Reaction
+    grokBot.addEventListener('click', () => {
+      grokBot.classList.add('bounce');
+      grokEyeLeft.classList.add('happy');
+      grokEyeRight.classList.add('happy');
+      isBusyWithEmoji = true;
+
+      setTimeout(() => {
+        grokBot.classList.remove('bounce');
+        grokEyeLeft.classList.remove('happy');
+        grokEyeRight.classList.remove('happy');
+        isBusyWithEmoji = false;
+        updateGrokEyes();
+      }, 850);
+    });
+  }
 });

@@ -1,0 +1,17 @@
+{
+  "environment": "Local Python HTTP server; Lighthouse simulated mobile throttling",
+  "scores": {
+    "performance": 93,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+  },
+  "metrics": {
+    "first-contentful-paint": "1.4\u00a0s",
+    "largest-contentful-paint": "3.0\u00a0s",
+    "total-blocking-time": "120\u00a0ms",
+    "cumulative-layout-shift": "0.026"
+  },
+  "lighthouseVersion": "13.6.0",
+  "fetchTime": "2026-11-06T14:55:59.988Z"
+}
